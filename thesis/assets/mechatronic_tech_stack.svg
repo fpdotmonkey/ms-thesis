@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="mechatronic_tech_stack.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="2.9281799"
+     inkscape:cx="22.19809"
+     inkscape:cy="125.50458"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid8"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="12"
+       spacingy="6"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46667px;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed, ';fill:#b8860b;stroke:none;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:0.352999, 1.059;stroke-dashoffset:0"
+       x="22.082357"
+       y="88.450752"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="stroke-width:0.353"
+         x="22.082357"
+         y="88.450752" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-size:8.46667px;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed,  Medium Condensed';fill:#000000;stroke:none;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:0.352999, 1.059;stroke-dashoffset:0"
+       x="-12.589934"
+       y="9.1284342"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="stroke-width:0.353;fill:#000000"
+         x="-12.589934"
+         y="9.1284342">Control</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-size:8.46667px;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed,  Medium Condensed';fill:#000000;stroke:none;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:0.352999, 1.059;stroke-dashoffset:0"
+       x="-19.731575"
+       y="21.297768"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         style="stroke-width:0.353;fill:#000000"
+         x="-19.731575"
+         y="21.297768">Middleware</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-size:8.46667px;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed,  Medium Condensed';fill:#000000;stroke:none;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:0.352999, 1.059;stroke-dashoffset:0"
+       x="-16.662411"
+       y="32.070099"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="stroke-width:0.353;fill:#000000"
+         x="-16.662411"
+         y="32.070099">Computer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:condensed;font-size:8.46667px;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed,  Medium Condensed';fill:#000000;stroke:none;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:0.352999, 1.059;stroke-dashoffset:0"
+       x="-3.7634325"
+       y="44.925232"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="stroke-width:0.353;fill:#000000"
+         x="-3.7634325"
+         y="44.925232">IO</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M -24,0 H 24 V 47.999999 H -24 V 0"
+       id="path8" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M -24,11.999999 H 24"
+       id="path9" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M -24,23.999999 H 24"
+       id="path10" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M -24,35.999999 H 24"
+       id="path11" />
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:condensed;font-size:8.46667px;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed,  Italic Condensed';fill:#000000;stroke:none;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       x="-40.699318"
+       y="57.1115"
+       id="text11"><tspan
+         sodipodi:role="line"
+         id="tspan11"
+         style="fill:#000000;stroke:none;stroke-width:0.353"
+         x="-40.699318"
+         y="57.1115">Sensors and transducers</tspan></text>
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M -48.000001,47.999999 H -24"
+       id="path12" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M 24,47.999999 H 48.000001"
+       id="path13" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="M 48.000001,59.999998 H -48.000001"
+       id="path14" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m -48.000001,47.999999 c 0,0 2.838631,2.117125 2.550125,4.045981 -0.288506,1.928856 -5.057651,2.646231 -5.240742,4.517883 -0.183091,1.871652 2.690617,3.436135 2.690617,3.436135"
+       id="path15"
+       sodipodi:nodetypes="czzc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.352999;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m 48.063941,47.999999 c 0,0 2.838631,2.117125 2.550125,4.045981 -0.288506,1.928856 -5.057651,2.646231 -5.240742,4.517883 -0.183091,1.871652 2.690617,3.436135 2.690617,3.436135"
+       id="path15-8"
+       sodipodi:nodetypes="czzc" />
+  </g>
+</svg>
