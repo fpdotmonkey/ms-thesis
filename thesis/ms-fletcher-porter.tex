@@ -1,47 +1,47 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                %%
-%% An example for writting your thesis using LaTeX                %%
-%% Original version by Luis Costa,  changes by Perttu Puska       %%
-%% Support for Swedish added 15092014                             %%
-%%                                                                %%
-%% This example consists of the files                             %%
-%%         thesistemplate.tex (versio 2.01)                       %%
-%%         opinnaytepohja.tex (versio 2.01) (for text in Finnish) %%
-%%         aaltothesis.cls (versio 2.01)                          %%
-%%         kuva1.eps                                              %%
-%%         kuva2.eps                                              %%
-%%         kuva1.pdf                                              %%
-%%         kuva2.pdf                                              %%
-%%                                                                %%
-%%                                                                %%
-%% Typeset either with                                            %%
-%% latex:                                                         %%
-%%             $ latex opinnaytepohja                             %%
-%%             $ latex opinnaytepohja                             %%
-%%                                                                %%
-%%   Result is the file opinnayte.dvi, which                      %%
-%%   is converted to ps format as follows:                        %%
-%%                                                                %%
-%%             $ dvips opinnaytepohja -o                          %%
-%%                                                                %%
-%%   and then to pdf as follows:                                  %%
-%%                                                                %%
-%%             $ ps2pdf opinnaytepohja.ps                         %%
-%%                                                                %%
-%% Or                                                             %%
-%% pdflatex:                                                      %%
-%%             $ pdflatex opinnaytepohja                          %%
-%%             $ pdflatex opinnaytepohja                          %%
-%%                                                                %%
-%%   Result is the file opinnaytepohja.pdf                        %%
-%%                                                                %%
-%% Explanatory comments in this example begin with                %%
-%% the characters %%, and changes that the user can make          %%
-%% with the character %                                           %%
-%%                                                                %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                            %%
+%% An example for writting your thesis using LaTeX                            %%
+%% Original version by Luis Costa,  changes by Perttu Puska                   %%
+%% Support for Swedish added 15092014                                         %%
+%%                                                                            %%
+%% This example consists of the files                                         %%
+%%         thesistemplate.tex (versio 2.01)                                   %%
+%%         opinnaytepohja.tex (versio 2.01) (for text in Finnish)             %%
+%%         aaltothesis.cls (versio 2.01)                                      %%
+%%         kuva1.eps                                                          %%
+%%         kuva2.eps                                                          %%
+%%         kuva1.pdf                                                          %%
+%%         kuva2.pdf                                                          %%
+%%                                                                            %%
+%%                                                                            %%
+%% Typeset either with                                                        %%
+%% latex:                                                                     %%
+%%             $ latex opinnaytepohja                                         %%
+%%             $ latex opinnaytepohja                                         %%
+%%                                                                            %%
+%%   Result is the file opinnayte.dvi, which                                  %%
+%%   is converted to ps format as follows:                                    %%
+%%                                                                            %%
+%%             $ dvips opinnaytepohja -o                                      %%
+%%                                                                            %%
+%%   and then to pdf as follows:                                              %%
+%%                                                                            %%
+%%             $ ps2pdf opinnaytepohja.ps                                     %%
+%%                                                                            %%
+%% Or                                                                         %%
+%% pdflatex:                                                                  %%
+%%             $ pdflatex opinnaytepohja                                      %%
+%%             $ pdflatex opinnaytepohja                                      %%
+%%                                                                            %%
+%%   Result is the file opinnaytepohja.pdf                                    %%
+%%                                                                            %%
+%% Explanatory comments in this example begin with                            %%
+%% the characters %%, and changes that the user can make                      %%
+%% with the character %                                                       %%
+%%                                                                            %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[english,12pt,a4paper,pdftex,eng,utf8]{aaltothesis}
 
@@ -81,6 +81,7 @@
 \usepackage{gensymb}
 \usepackage{svg}
 \usepackage{lipsum}  % for placeholder text
+\usepackage{subcaption}
 
 %% All that is printed on paper starts here
 \begin{document}
@@ -273,29 +274,9 @@ $\mathbf{B}$
 %% Leave first page empty
 \thispagestyle{empty}
 
-Mechatronic systems are enormously complex.  The name {\it mechatronics\/} betrays that it involves work with mechanics and electronics, but as well a mechatronics engineer needs to also be a practitioner of software, hydraulics, and pneumatics.  In the research environments where typically mechatronics engineers are found, they also need the practical knowledge to implement their designs, like how to assemble a circuit that gets a signal from A to B, or how do you merge software contributions from multiple collaborators.
+Research into fluid power systems is difficult and complex.  When doing research with hardware systems, before a single research question can be asked of the hardware, researchers must assemble mechanical components, hook up power electronics, and route hoses for the hydraulic and pneumatic systems.  Then the most complex of them all, the control system must be added.  Its tangle of spindly wires reaches all throughout the machine, meeting at the computer, the single most complex component of any fluid power system.
 
-To create all of this from first principals is such a massive, untenable task.  Fortunately, the engineers of the past have left behind knowledge and tools to overcome these kinds of challenges.  However, even the most tenacious researcher struggles to find and grasp all of this knowledge.  It would ease the burden to have a structured method for describing these tools.  The work of this thesis will be to create just that---a novel, structured categorization of tools used in mechatronics, which I'll call a {\it Mechatronic Tech Stack}.
-
-\subsection{Motivation}
-
-\lipsum[1-3]
-
-\subsection{Objective}
-
-\lipsum[1-3]
-
-\subsection{Scope}
-
-\lipsum[1-3]
-
-\subsection{Methodology}
-
-\lipsum[1-3]
-
-\subsection{Thesis Structure}
-
-\lipsum[1]
+This paper improves the process of commissioning control systems for fluid power systems.  It will do this by reasoning about how to abstract behavior and components in control systems into layers that are more easily reasoned with, synthesizing a novel {\it mechatronic tech stack theory}.  It will go on to demonstrate in three case studies how this theory can be applied in fluid power systems.
 
 \clearpage
 
@@ -306,18 +287,18 @@ This section constructs the backbone of this thesis, namely the novel theory of 
 
 \subsection{Technology Stacks in the IT Sector}
 
-A concept of a tech stack, alternately called a solution stack or a software stack, is to enumerate the tasks done by a kind of software application and to suggest tools for those tasks~\cite{PranamStack2017}.  More specifically, it defines a set of abstraction layers; each layer abstractly describes a type of task and contains within it the set of software tools that complete that task.  The intention is to take the difficult task of tool selection and provide a structure through which practitioners can think about the functions and tooling needs of their application, freeing mental energy to critically assess which tools would be best for their technical and personnel needs.
+The concept of a tech stack, alternately called a solution stack or a software stack, is to enumerate the tasks done by a kind of software application and to suggest tools for those tasks~\cite{PranamStack2017}.  More specifically, it defines a set of abstraction layers; each layer abstractly describes a type of task and contains within it the set of software tools that complete that task.  The intention is to take the difficult task of tool selection and provide a structure through which practitioners can think about the functions and tooling needs of their application, freeing mental energy to critically assess which tools would be best for their technical and personnel needs.
 
 \subsubsection{The Web Stack}
 
 A ubiquitous example of a tech stack in IT is the {\it web stack}, used for developing websites and related pieces of software.  The tasks that websites must perform, as suggested by this stack, are to present an interface to a user through a web browser (the {\it front end\/}), to conduct some business logic like creating a customized page for the user (the {\it back end\/}), to perform network communication (the {\it server\/}), and to store and dispatch data (the {\it database\/})~\cite{PranamStack2017}.  This doesn't describe all websites---many don't have databases or any real back-end logic, but it describes at least a superset of the functionality of most websites.
 
-Tools in each of these layers are myriad and to highlight that, proceeding is a list of a small sample.  You can also observe this in figure~\ref{fig:web_stack}  Front-end tools like jQuery~\cite{jQuery} have been proven from many years of use, React~\cite{React} is extrodinarily powerful and can be used in non-web contexts as well, and even plain HTML without an additional framework can be good on account of its simplicity.  Backend tools can allow a developer to select their favorite programming language, or one that is specialized for web backends, or even JavaScript like the front end uses.  Servers are often integrated into the back-end framework, but if not, specialized servers like Apache~\cite{ApacheServer} or nginx~\cite{nginx} are popular.  Databases are dominated by reliable and proven relational, SQL-based offerings, but alternatives like the confusingly named NoSQL or Redis~\cite{redis} have become popular in the past years on account of their performance and scalability.
+Tools in each of these layers are myriad and to highlight that, proceeding is a list of a small sample.  You can also observe this in figure~\ref{fig:web_stack}  Front-end tools like jQuery~\cite{jQuery} have been proven from many years of use, React~\cite{React} is extraordinarily powerful and can be used in non-web contexts as well, and even plain HTML without an additional framework can be good on account of its simplicity.  Backend tools can allow a developer to select their favorite programming language, or one that is specialized for web backends, or even JavaScript like the front end uses.  Servers are often integrated into the back-end framework, but if not, specialized servers like Apache~\cite{ApacheServer} or nginx~\cite{nginx} are popular.  Databases are dominated by reliable and proven relational, SQL-based offerings, but alternatives like the confusingly named NoSQL or Redis~\cite{redis} have become popular in the past years on account of their performance and scalability.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.5\textwidth]{assets/web_stack}
-  \caption{The web stack is like 4 bins of tools, here illustrated as boxes with the logos of common tools within them.}\label{fig:web_stack}
+  \caption{The web stack is like four bins of tools, here illustrated as boxes with the logos of common tools within them.}\label{fig:web_stack}
 \end{figure}
 
 In discussing the web stack, it's also useful to think about a particular set of tools used for a single project, i.e.\ one tool from each layer.  Alternately, this can be thought of as the project's {\it cross section\/} of the web stack, or the the project's own stack.  There are several of these cross sections that are widely used, such as LAMP (Linux, Apache, MySQL, PHP) or MEAN (MongoDB, Express.js, Angular.js, Node.js)~\cite{PranamStack2017}.  Just as often, firms employ stacks tailored to their technical and personnel needs and often write about these decisions in blog posts, such as for recent changes to Microsoft Teams in~\cite{Singh2023}.
@@ -336,11 +317,11 @@ To spare a moment for the details of the model, it consists of layered abstracti
   \caption{The OSI model understands network communication to be a layer cake of abstractions over the physical communication media.  Taken from~\cite[§6.1.3]{ISO7498-1}.}\label{fig:osi_model}
 \end{figure}
 
-An interesting property of this layered abstraction architecture is that protocols which are defined in higher layers can often have the lower layers transparently replaced.  For instance, the internet protocol which we use every day is defined in the Network and Transport layers.  Typically the lower-level protocols used with IP are Ethernet and IEEE~802.11 (Wi-Fi).  However, with some implementation effort, other low-level protocols are available.  Lindgren et al.\ developed IP over CAN, wherein an internet network is extended over a CAN network~\cite{Lindgren2008}, something which was never imagined by implementors of CAN nor IP.\
+An interesting property of this layered abstraction architecture is that protocols which are defined in higher layers can often have the lower layers transparently replaced.  For instance, the internet protocol which we use every day is defined in the Network and Transport layers.  Typically the lower-level protocols used with IP are Ethernet and IEEE~802.11 (Wi-Fi).  However, with some implementation effort, other low-level protocols are available.  Lindgren et al.\ developed IP over CAN, wherein an internet network is extended over a CAN network~\cite{Lindgren2008}, something which was never imagined by implementers of CAN nor IP.\
 
 \subsubsection{Principles for Identifying Abstraction Layers}
 
-The OSI standard also includes the principals upon which its layers were designed~\cite[§6.2.1]{ISO7498-1}.  In summary, each layer should be a discrete, seperable item with a coherant function.  The interfaces between layers should be succinct and only interface with adjacent layers.  It suggests having fewer layers would ease explanation and implementation and it offers a test to aid in determining layer boundaries.  It also says that the layers should be motivated by experience.  Being a novel theory, experience will be the principal gain of future work, although case studies discussed later will provide somewhat in this dimension.  A layer should have a different level of abstraction in terms of {\it morphology}, {\it syntax}, and {\it semantics}.
+The OSI standard also includes the principals upon which its layers were designed~\cite[§6.2.1]{ISO7498-1}.  In summary, each layer should be a discrete, separable item with a coherent function.  The interfaces between layers should be succinct and only interface with adjacent layers.  It suggests having fewer layers would ease explanation and implementation and it offers a test to aid in determining layer boundaries.  It also says that the layers should be motivated by experience.  Being a novel theory, experience will be the principal gain of future work, although case studies discussed later will provide somewhat in this dimension.  A layer should have a different level of abstraction in terms of {\it morphology}, {\it syntax}, and {\it semantics}.
 
 This model of morphology, syntax, and semantics come from Bloomfieldian linguistics~\cite{Bloomfield1923}.  It's used to coerce natural languages into a structured form from which meaning can be gleaned.  Here, the standard authors are using it to glean structure and meaning from engineering systems.  To understand this model, take this line of C code.
 
@@ -360,7 +341,7 @@ When these morphemes are combined into phrases, that's syntax.  Syntax is the st
 
 To understand the semantics of \verb|printf|, you must read the documentation.  It will tell you that \verb|printf| means to convert and write output to the console under the control of a format string.  You'll also see that \verb|"I have %u cows\n"| is that format string, and \verb|num_cows| is an additional argument, presumably the number of cows the author has.  In fact, reading the documentation further, you'll learn that the format string itself has its own morphology, syntax, and semantics driving how formatted output is created.
 
-Technology stacks, like the web stack or the OSI stack, create a structure for selecting tools for an application and abstractions for interfacing with other layers of the stack.  The OSI model also provides guidance on how to architect a layered model based, among other things, on creating layers with coherant morphology, syntax, and semantics.
+Technology stacks, like the web stack or the OSI stack, create a structure for selecting tools for an application and abstractions for interfacing with other layers of the stack.  The OSI model also provides guidance on how to architect a layered model based, among other things, on creating layers with coherent morphology, syntax, and semantics.
 
 In the next section, this knowledge will be applied to create a mechatronic tech stack with the properties of the web and OSI stacks.
 
@@ -368,20 +349,20 @@ In the next section, this knowledge will be applied to create a mechatronic tech
 
 Broadly speaking, mechatronic systems include mechanical systems, power-electronic systems, and digital control systems (neglecting mechanical governors and analog control circuits).  All of these could be considered under a theory of a mechatronic tech stack, but the present treatment will only consider the control systems.  More specifically, this stack will start just after any sensors or transducers, giving those items IO (input/output) hookups.
 
-The layers will by identified by noting contrasts in morphology, syntax, and semantics thoughout the gamut of the control system.  Layer boundaries will become evident where differences in these aspects are dramatic.  I'll then describe the layers and the interfaces between them.
+The layers will by identified by noting contrasts in morphology, syntax, and semantics throughout the gamut of the control system.  Layer boundaries will become evident where differences in these aspects are dramatic.  I'll then describe the layers and the interfaces between them.
 
 Morphology provides the strongest and most coarse distinctions in layers.  If the atoms that one component is made of are incompatible with another, they can't effectively be abstracted together.  The most obvious case is that those components that are made of literal atoms, i.e.\ hardware, must be considered separately from those that aren't physical, namely software.  Within hardware, a control engineer will concern themselves with the components of the computer which their control softwares run on (RAM, CPU, storage, etc.) and the physical connections between the computer components and the sensors and transducers, such as cables, connectors, contacts, and traces.  Making up the software is the instructions of the control program itself, but also supporting software like the operating system, runtime environments, and useful libraries.
 
 Syntax is the structure of an idea.  It is a finer comb to discriminate layers.  Software generally is built as a linear sequence of instructions with branches and loops.  This describes the control engineer's perspective on their own control program, but supporting software like libraries are more abstract.  They're better thought of as a dependency.  A control program may depend on libraries A, B, and C, and those in turn depend on libraries D, E, F, and G.  These {\it middlewares\/} are better understood as a network of the softwares themselves and the dependency connections between them.  For hardware, its structure is its assemblage.  The computer components are connected to the motherboard, sensors and transducers are connected to a CAN bus, the temperature sensors communicate over I2C, etc.  Like middleware, hardware is the network of components and the connections between them, but the type of connection is also important.  A system with components on a CAN bus is going to be different than one with a USB bus, and different still from a system where all components communicate over a serial connection.
 
-Semantic meaning reveals the most subtle distinctions in layers.  The control program is an expression of the business logic desired by the control engineer.  It is whatever control logic that is asked of the engineer.  Middleware begins where the controller ends, which is to say it is abstraction around the computer's function.  It attempts to save the engineer from difficult, tedious, or uninteresting implementation.  The middleware ends where the computer begins.  Computers are meaningful when they provide compelling output based on some input.  That is to say, when they compute.  How this computation occurs at the hardware level is determined by the computers {\it architecture}.  This defines what machine instructions do what, which hardware pins go where, and how it should all be connected.  IO is the hardware beyond the computer.  Its is the language of data transfer.  A sensor's pressure reading becomes a message to the computer.  The computer's actuation command becomes a message to the transducer.  This is handled by netowrk communication protocols, the domain of the OSI model.
+Semantic meaning reveals the most subtle distinctions in layers.  The control program is an expression of the business logic desired by the control engineer.  It is whatever control logic that is asked of the engineer.  Middleware begins where the controller ends, which is to say it is abstraction around the computer's function.  It attempts to save the engineer from difficult, tedious, or uninteresting implementation.  The middleware ends where the computer begins.  Computers are meaningful when they provide compelling output based on some input.  That is to say, when they compute.  How this computation occurs at the hardware level is determined by the computers {\it architecture}.  This defines what machine instructions do what, which hardware pins go where, and how it should all be connected.  IO is the hardware beyond the computer.  Its is the language of data transfer.  A sensor's pressure reading becomes a message to the computer.  The computer's actuation command becomes a message to the transducer.  This is handled by network communication protocols, the domain of the OSI model.
 
 This is enough to propose a mechatronic tech stack.  The mechatronic stack as outlined sits on top of signaling with sensors and transducers.  Those are interfaced by IO systems that connect to computer systems which run middleware upon which a control program depends.  This is illustrated as a stack diagram in figure~\ref{fig:mechatronic_tech_stack}.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.5\textwidth]{assets/mechatronic_tech_stack}
-  \caption{The mechatronic tech stack places high-level business logic at the top and low-level interfacing at the bottom.  This sits atop hardware intrumentation, where this theory placed its limit.}\label{fig:mechatronic_tech_stack}
+  \caption{The mechatronic tech stack places high-level business logic at the top and low-level interfacing at the bottom.  This sits atop hardware instrumentation, where this theory placed its limit.}\label{fig:mechatronic_tech_stack}
 \end{figure}
 
 Between the layers are the interfaces that enable higher layers to take advantage to take advantage of the abstractions provided by lower layers.  The control layer, being the highest, provides no interface to further layers, but from the middleware layer it demands certain {\it application programming interfaces}, or APIs.  Each program in the middleware layer (generally) provides an API, so the control-middleware interface is the union of all of these APIs.  The needs of middleware are typically met by other middleware, but those that interface with the computer directly do so through architecture-defined machine code.  Then for the Computer-IO interface, the IO needs some hardware connection like pins broken out from the CPU, integral connection ports like for USB, serial, or RJ45 (Ethernet).  Finally, IO interfaces with sensors and transducers in the same way it does with computers, through hardware interfaces like terminal blocks or hookups to a fieldbus.
@@ -394,128 +375,195 @@ Following will be several case studies providing concrete illustrations of how t
 
 \section{Case Studies}\label{sec:case_studies}
 
-\lipsum[1-3]
+These case studies will apply the theory of a mechatronic tech stack to three projects---one where a requirement change caused a re-architecture of the control system, another where three similar devices have their stacks compared, and the last has its stack designed with this theory in mind.  In all cases, the project's stack will be explicated and there will be a discussion of interesting features of its stack.
 
-\subsection{Dolores, a Full-Scale Mining-Loader Steering Linkage}
+\subsection{Matlab or a PLC for a Steering Linkage?}
 
-Talking about Dolores, seen in figure~\ref{fig:dolores}, gotta cite Ville~\cite{Naervaenen2022}, Hermansson~\cite{Hermansson2021}, and Pyne~\cite{Pyne2020}.
-
-Dolores is an articulated steering linkage test, see Dudziński~\cite{Dudzinski1989} for background on articulated steering.  It's meant to be like a linkage from a mining vehicle.
+Dolores is a full-scale testbed in Aalto University's Fluid Power Laboratory, seen in figure~\ref{fig:dolores0} to study the application of electric hydrostatic actuation in an articulated-steering linkage for a front-loading mining vehicle~\cite{Hermansson2021, Helduser1999, Dudzinski1989}.  Its control system commissioning was completed in 2021, but come 2023, an industry partner in the experiment requested hardware changes that demanded a substantial re-architecture of the control system.  This case study will discuss the mechatronic tech stacks behind the old and the new systems.
 
 \begin{figure}[h]
-	\centering
-	\includegraphics[width=0.4\textwidth]{assets/dolores}
-	\caption{Dolores rotates the top platform about a pivot by actuating a pair of hydraulic cylinders.  A pair of additional cylinders in parallel can resist the motion providing loads useful for testing}\label{fig:dolores}
+  \centering
+  \includegraphics[width=0.4\textwidth]{assets/dolores}
+  \caption{Dolores rotates the top platform about a pivot by actuating a pair of hydraulic cylinders.  A pair of additional cylinders in parallel can resist the motion providing loads useful for testing}\label{fig:dolores0}
 \end{figure}
 
-The hydraulics are implemented as a DDH a.k.a. EHA system.  That kind of system was described by Zhang et al in~\cite{Zhang2017}.  The particular circuit is similar to that by Chiang in~\cite{Chiang2011}.
+The industry partner's requested change occurred in the IO layer.  The old system has an inverter that drives a servomotor, a safety valve to enable the system, and an array of pressure, temperature, and flow sensors to observe the state of the hydraulic system.  The inverter and the pressure and temperature sensors all communicated over the CANopen protocol, the flow sensors gave analog inputs, and the safety valved needed a digital output.  The CAN communication was handled by a Vector CAN/USB dongle~\cite{VectorCanUsbDongle}.  All other IO went through a National Instruments data acquisition device (DAQ).  In the new system, the forced change was that the inverter had to communicate over EtherCAT.\  This meant there needed to be new hardware to support this protocol.  That hardware was selected to be Beckhoff EtherCAT terminals.  They provided the interface to connect the inverter to the computer and also to provide digital and analog IO as well as a CAN bus to communicate with the extant sensor network~\cite{BeckhoffEL6751}.  This made the DAQ unnecessary, but the CAN/USB dongle was still required due to deficiencies in Beckhoff's control interfaces which are discussed below.
 
-EHA/DDH was first noted in by~\cite{Helduser1995} in German, and he also did the first English-language publication in~\cite{Helduser1999}.
+The system had been controlled by a conventional Windows workstation.  The DAQ had connected through a PCIe slot on the workstation's motherboard.  This may have been fine to keep for the new system, but it would have tied the workstation down to Dolores instead of being used for the several experiments in the lab.  One of Beckhoff's industrial PCs was selected as the computer in order to leverage Beckhoff's support~\cite{BeckhoffC60XX}.  It was fairly expensive, but it was thought that architecting the system to align with vendor expectations would make development easier and cause fewer problems to arise.  However, the workstation did tap into the CAN bus to initialize the sensors, so it wasn't completely out of the loop.
 
-\subsubsection{Old System}
+In the old system, the workstation ran Windows, the DAQ was managed by drivers from National Instruments, and the CAN bus was initialized using Vector's CANalyzer application and runtime commands came through Vector's Simulink library~\cite{VectorCanalyzer, SimulinkVectorCAN}.  Due to issues getting reliable connections over EtherCAT with Simulink (possibly due to user error, though the documentation was hardly simple), the new system uses a PLC-based middleware.  Still based on Windows, it has libraries and runtimes to run the EtherCAT bus, to read from the CAN bus, and to interface with an external development computer.  CANalyzer remained to initialize the CAN bus.
 
-Prior to the work for this thesis, Dolores was controlled by Matlab and Simulink code wherein sensor readings were taken over a CAN bus through a USB-CAN dongle to the Simulink Vector CAN interface [cite].  The devices on the CAN bus were initialized using the Vector CANalyzer program.  The control program sent motor commands to a Parker ECU, seen in figure~\ref{fig:dolores_old_system}, over CANopen, which itself would send commands to the ABB inverter that drove the motor.  It also sent signals to a shuttle valve through a National Instruments DAQ, which was stepped up in power with a relay and a bench-top power supply.
+The old system had controllers written with Matlab and Simulink.  However, due to middleware issues, they were abandoned in favor of writing controllers in PLC languages based on IEC~61131-3 with the TwinCAT development environment~\cite{IEC61131-3, BeckhoffTwinCAT}.  The major issue with TwinCAT is that while it nominally supported sending messages over CANopen, there was no documented way to initialize CAN devices.  This was fixed by manually sending commands with CANalyzer at initialization time.
 
 \begin{figure}[h]
-	\centering
-	\includegraphics[width=0.4\textwidth]{assets/old_dolores_controls}
-	\caption{The previous control system had an ECU (center), power supplies for valves (bottom), readouts for flows in the hydraulic circuit (top), and a cabinet containing the inverter for the electric motor (left).  Not depicted is the National Instruments DAQ and the CAN-USB dongle.}\label{fig:dolores_old_system}
+  \centering
+  \includegraphics[width=\textwidth]{assets/mechatronic_tech_stack_dolores}
+  \caption{The change was to use Beckhoff's stack, though it didn't work without supplements.}\label{fig:mechatronic_tech_stack_dolores}
 \end{figure}
 
-Pros:
-\begin{enumerate}
-	\item can be programmed with Matlab/Simulink (\textbf{FLEXIBLE})
-	\item it worked
-\end{enumerate}
+Together, the stack for the old system was CANopen-based IO with a DAQ supplementing simple analog and digital signals, a workstation computer, Windows middleware with drivers and libraries to support communication with the CAN bus and DAQ, and a controller based on Matlab and Simulink.  In the new system, the stack consisted of a mix of EtherCAT and CANopen IO, a Beckhoff Industrial PC computer in concert with a workstation, PLC middleware along with a sidecar application to initialize the CAN network, and a controller written in PLC languages with TwinCAT.\  This is illustrated in figure~\ref{fig:mechatronic_tech_stack_dolores}.
 
-Cons:
-\begin{enumerate}
-	\item components provided by 6 vendors (\textbf{SLOW})
-	\item two components only for motor control (inverter, ECU), two components for IO (DAQ, CAN dongle) (\textbf{SLOW}, \textbf{GOOD})
-	\item multiple programs running for initialization (\textbf{BAD}, \textbf{SLOW})
-	\item every part of the system is opaque (\textbf{BAD})
-	\item supporting new interfaces requires adding more components and thus complexity (\textbf{RIGID})
-\end{enumerate}
+It's notable that a fairly small change in the system, a change in IO protocol, demanded a wholesale re-architecture of the control system.  Also notable is that deficiencies in controller-layer software demanded changes in the whole stack.  This speaks to how in both of these control systems, all of the tools are {\it tightly coupled}, meaning changes in one tool often demand changes in the others.  For this mechatronic stack model to be a useful means of selecting tools like the web stack, the layers need to be {\it loosely\/} coupled so tools can be replaced with minimal change in other layers.
 
-\subsubsection{New System}
+\subsection{Embedded Systems for Soft, Pneumatic Actuators}
 
-An industry collaborator on the GOOD project required that we use EtherCAT~\cite{Andreeva2023} to communicate with some inverters they were providing for the project.  This meant that the extant control hardware needed to be replaced with something that supports EtherCAT.
-
-Additionally, a different industry partner suggested driving our hardware to run in tandem with software simulations, principally with the Mevea physics system~\cite{MeveaSoftware}.  Because of this, it was a priority to design the control systems that could integrate with external applications.  However, to date there haven't been any experiments that have called for this.  So while it was an important factor in the initial selection, external integrations haven't been thoroughly exercised.
-
-It was also understood that the already-installed CAN-based sensors would remain in place, so CAN support was a requirement for the system.  With the benefit of hindsight, if this requirement were not there, commissioning these control systems would have been faster, but there was not the institutional knowledge in Aalto's Fluid Power Lab to anticipate this.
-
-I considered two option in how to change the system.  One was to use a Speedgoat Realtime system and the other to use a PLC from Beckhoff Automation.  After studying both options, I implemented the control system with the Beckhoff PLC.  The reasoning for why follows.
-
-The Speedgoat system was the first system I considered.  Behind the branding, these were regular computers which ran QNX, a UNIX-like, real-time operating system~\cite{SpeedgoatMachine, QnxSdp}.  It has an interface with Matlab and Simulink, and in fact, these interfaces are the intended principal means of administering these computers.
-
-The principal benefit of this systems was its deep integration with Matlab and Simulink, which are familiar to the other researchers working on the GOOD project.  It would enable at least some degree of code reuse between simulation and hardware testing, which would speed up iteration time and so allow greater research output.
-
-With respect to IO, Speedgoat sells expansions for CAN and digital IO like needed for valves.  They were fairly pricey and seemed as though they could not be easily used with non-Speedgoat systems, but they presumably worked in their intended context.  It's also possible for Speedgoat to communicate with 3rd-party IO devices over EtherCAT.  Since EtherCAT terminals from Beckhoff Automation are relatively cheap and staff in our lab had experience with them, we considered them a strong option.
-
-Integration with external applications is where Speedgoat fell flat.  interfaces with external applications couldn't be used directly in the Simulink models since they run on the Speedgoat system and not the workstation which has the external applications.  The solution to this is to communicate over a local network information about the system state.  Speedgoat is able to use Simulink's network communication blocks to send messages over TCP/IP or UDP~\cite{SimulinkNetworkComms}.  However, I was not able to get reliable communication from reproducing the examples in the documentation.  Better was communication with the Matlab's Instrument Control Toolbox, but that can only (easily) be used to create virtual control panels in Matlab, not more general interfaces~\cite{SimulinkInstrument}.  There was also an option to use an open-source networking library like Zero MQ, but that would have required obtaining a C++ compiler compatible with QNX and then creating the Simulink blocks to access it, which would be difficult and expensive~\cite{ZeroMQ}.
-
-I considered its strong guarantees of real-time performance, however, I never could find a case where they seemed to matter.  A real-time system is one where the low-level computer systems support running a program with a fixed time step, and often that time step is small and has little error.  Small time steps are nice, but Dolores is massive and has the large time constants associate with that, so very small time steps ($\mathcal{O}(\unit{\micro\second})$) won't provide any control benefit.  As well, I don't know that a time step coming late or early would disrupt control function, so I felt it appropriate to ignore this kind of timing jitter and allow issues related to it to be discovered instead of anticipated.  To date, this has caused no issues.
-
-While its deep integration with Matlab and Simulink is appealing, the high difficulty in integrating with external tools made it an untenable choice.
-
-The Beckhoff PLC was better, but not perfect.  Under the hood, they are regular computers that run Windows.  A PLC isn't a special type of computer, it just means that programs are written with computer languages specified by \mbox{IEC 61131-3}~\cite{IEC61131-3}.  For Beckhoff's systems, the development tools for these languages are provided by the TwinCAT IDE~\cite{BeckhoffTwinCAT}.  As mentioned previously, Beckhoff sells hardware for EtherCAT IO, and that includes a CAN master device~\cite{BeckhoffEL6751}.
-
-It is a drawback that programs can't be written directly in Matlab or Simulink with the PLC hardware.  However, there was already some knowledge of the PLC language Structured Text in the lab and Beckhoff offers some products for interfacing with Matlab~\cite{BeckhoffMatlabInterface}.  So there was a possibility of using more familiar tools, though those interfaces received less support from Beckhoff than the native PLC code.  The PLC language for its part was fine.  It competently afforded moving data in and out of hardware and it had some facilities for abstracting low-level behaviors into higher-level concepts using Function Blocks, which are similar to classes in C++.
-
-Through some informal experiments, I found the IO hardware and software to be reasonable to work with.  Program variables could be declared as an input or output and then linked with a register on the IO device.  To access these registers, the TwinCAT IDE could scan for all the devices available on the EtherCAT network and create a device tree containing IO registers and configuration data.  However, in time I would discover that doing this uncarefully could break the existing links which would take a long time to recreate.
+A research group at Okayama University of Science has, over the past years, developed a novel soft, pneumatic actuator that extends when supplied with pressure, which they call an EFPA~\cite{Noritsugu2005}.\ This section will study the tech stacks for three applications of this actuator they developed, a six-legged mobile robot for providing the elderly with an interactive physical activity~\cite{Hase2020}, a pipe-traversal robot for inspecting and repairing Japan's water pipe network~\cite{Shinohara2020}, and a lightweight servo valve based on bending hoses to support EFPA applications~\cite{Kobayashi2020}.  All of these can be seen in figure~\ref{fig:soft_pneumatic_actuators_demo}  Note that because this is a case study on work we did not participate in, some details must be inferred.
 
 \begin{figure}[h]
-	\centering
-	\includegraphics[width=0.4\textwidth]{assets/new_dolores_controls}
-	\caption{foo}\label{fig:dolores_new_system}
+  \centering
+  \begin{subfigure}[t]{0.28\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{assets/six_legged_robot}
+    \caption{Six-legged robot~\cite{Hase2020}}\label{sfig:six_legged_robot}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.33\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{assets/pipe_robot}
+    \caption{Pipe-traversal robot~\cite{Shinohara2020}}\label{sfig:pipe_robot}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.29\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{assets/bending_servo_valve}
+    \caption{Bending servo valve~\cite{Kobayashi2020}}\label{sfig:bending_servo_valve}
+  \end{subfigure}
+  \caption{These projects are made by the same people with the same technologies using similar tools}\label{fig:soft_pneumatic_actuators_demo}
 \end{figure}
 
-IO over CAN was much more difficult.  While Beckhoff officially supports it, the available documentation is sparse, difficult to find, and doesn't include critical configuration procedures.  The only way to learn these things is to contact support.  This can take a long time, since to the best of my knowledge, Beckhoff has only one support person knowledgeable in the CAN system in Finland.  Even after getting support, major features like initialization were missing and needed to be provided with the Vector CAN tools used in the old system.  From notes in unrelated documentation I could find, it appears that initialization at least is technically implemented, but the means to enable it remain elusive.
+In the IO layer, these are all similar.  The six-legged and pipe robots have an array of on/off valves, commanded by digital signals, to pressurize their EFPAs and the servo valve has its position set with a small servomotor, which is controlled by a PWM signal.  These signals are propogated through direct connection to the system-on-a-chip computer, although Shinohara et al.\ note that there are circuits between to step up power, which presumably they all do.  The robots received command signals from a workstation over a serial connection.  Hase et al.\ note that there was an intermediate chip on the six-legged robot to connect over USB, which is also likely for the pipe robot given in one figure, they claim the connection is over USB.\  The servo valve computer had no reported inputs, though several sensors connected to a data recording device.
 
-The inverter which was provided, an ABB ACS880, can be commanded with the CiA 402 protocol~\cite{ACS880, CiA402}.  It would appear that TwinCAT has built-in support for this protocol, however it appears that it's locked behind using their motor control products, e.g. EP7211~\cite{EP7211}.  While it would have been desirable to do so, this project was constrained by industry collaborators to communicate with the inverters directly over EtherCAT.  Therefore it was necessary to create a new implementation of this protocol which doesn't demand other hardware.  This wasn't extremely difficult; the protocol just describes a finite state machine to bring the drive into an operational state.  However, without any facilities for error handling, like \verb|try|/\verb|catch| blocks in C++~\cite{CppTryCatch} or \verb|Result|s in Rust~\cite{RustResult}, it was very tricky to implement error handling and I am not confident that the current implementation is completely reliable.  This means that the drive can potentially enter an unsafe fault state which would need to be handled by a human operator hitting an emergency stop switch.
+The computer used for the two robots was an SH7125, a 32-bit SuperH-based system on a chip, meaning it had all necessary components for operation like RAM and peripherals on a single die~\cite{SH7125}.  The servo valve used an H8/3264, a 32-bit H8/300-based system on a chip~\cite{H83264}.  These architectures, while unfamiliar in name, are common for applications like printer or hard drive controllers where cost and hardware IO are important.  Both of these CPUs have inbuilt peripherals for IO wherein when the CPU writes a number to a register, the pins will change in voltage state based on the binary representation of that number.
 
-All these IO cards came with long lead times for orders, sometimes up to months.  Beckhoff claims this is due to supply chain issues stemming from the past years of social and political upheaval around the world.  Regardless, I doubt Speedgoat delivers much faster given they are a much smaller vendor.
+No middleware is mentioned in these papers.  While it's in principle possible that they ran some embedded operating system, that seems doubtful given it wasn't mentioned and all their controllers do is write to a register every timestep.  It is possible that they used some external libraries to aid in programming.  This style of programming without an operating system is called {\it bare metal\/} because the interface is provides is just the metal on the board.
 
-Interfacing with external programs was possible through a built-in network UDP interface~\cite{BeckhoffTcpUdpRealtime}.  It requires configuration and about 150 lines of code to create the server on the PLC side.  Then the external application can communicate with it as though it's like any other UDP server on the internet.  An example I created of how this is implemented can be found online in~\cite{PorterGoodPlc}.  The PLC portion found at the path \verb|/good_system/Dolores/POUs/Server.TcPOU| and the external application at \verb|/plc_client/plc_client.py|.  TwinCAT's UDP API was sufficient to create a simple network interface for the PLC program, however when I tried to create more complex interfaces, it frequently crashed and behind only cryptic, unhelpful error messages, if anything at all.
+The language the controllers were written in was not mentioned in the papers, but it's possible they used an assembly language or C since major compilers support both of these architectures~\cite{GccSupportedArchitectures}.  Hase et al.\ state that the control program they wrote was to cycle through a fixed sequence of states for the valves, perhaps switching sequences interactively over the serial connection.  None of these controllers implemented any closed-loop control, but got compelling results in spite of that (though results may have been even better with it).
+
+Each of these three projects implemented a largely similar stack---IO based on direct connections to the CPU with supporting circuitry, an embedded system-on-a-chip computer, possibly no middleware, and probably controllers written in C or assembly.  By using a common stack, these researchers were able to skip over the tedious and difficult work of selecting tools and just use what is familiar to their workplace and focus their energies on research.
 
 \subsection{A Novel Stack for a Pneumatic Stewart Platform}
 
 With this new theory of a mechatronic tech stack, it made sense to start a project to study what tools this model lends itself to when applied prescriptively.  The project was a driving simulator chair that had been an unfinished student project a year prior~\cite{Bjoerklund2023}.  The mechanical systems had been finished including all the sensors and transducers, so all that was needed was a control system.
 
-The system is a chair atop a stewart platform whose linear actuators are single-acting pneumatic-muscle cylinders~\cite{Stewart1965, Caldwell1995}.  The valve manifolds that were already made for this had one valve to connect the pneumatic muscle to an external pressure source and another to vent the muscle to atmosphere.  If both valves were closed, it would brake the cylinder.  It was avoided to open both since it would vent the pressure source to atmosphere.  There are 6 instances of this circuit, connected to the common pressure source in series.  Each cylinder also has a position sensor, which exposes itself as a voltage signal from a potentiometer.
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[t]{0.35\textwidth}
+    \includegraphics[width=\textwidth]{assets/rocking_chair}
+  \end{subfigure}
+  \quad
+  \begin{subfigure}[t]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{assets/pneumatic_cylinder_test}
+  \end{subfigure}
+  \caption{The whole system, left~\cite{Bjoerklund2023}, is a chair on a Stewart platform made with pneumatic cylinders.  On the right is a cylinder driven under the present tech stack.}\label{fig:stewart_platform_demo}
+\end{figure}
 
-Tool selection started from the bottom of the stack, namely IO.\  The need was to switch 12 digital outputs for the valves, each about $\qty{2}{\watt}$, and six analog inputs ($\qtyrange[range-units=single,range-phrase=..]{0}{24}{\volt}$) from the position sensors.  It was also desirable for the work to be done quickly to have a demonstration in time for publication.  This was met with EtherCAT IO cards from Beckhoff~GmbH, in large part thanks to their availability within our lab.  They supply digital output cards and analog input cards that mostly met the requirements; the digital ouputs needed to be supplemented with flyback diodes due to the inductive load and the analog inputs needed signals stepped down to $\qtyrange[range-units=single,range-phrase=..]{0}{10}{\volt}$ with resistors~\cite{BeckhoffEL2042,BeckhoffEL3062}.  This meant routing signal cables from the sensors and transducers to terminal blocks, placing the diodes and resistors in the terminals, and from there on to the Beckhoff terminals.  There then is an EtherCAT connection from the block of Beckhoff terminals to the computer's Ethernet port~\cite{BeckhoffEK1100}.
+The system is a chair atop a Stewart platform whose linear actuators are single-acting pneumatic-muscle cylinders, seen in figure~\ref{fig:stewart_platform_demo}~\cite{Stewart1965, Caldwell1995}.  The valve manifolds that were already made for this had one valve to connect the pneumatic muscle to an external pressure source and another to vent the muscle to atmosphere.  If both valves were closed, it would brake the cylinder.  It was avoided to open both since it would vent the pressure source to atmosphere.  There are 6 instances of this circuit, connected to the common pressure source in series.  Each cylinder also has a position sensor, which exposes itself as a voltage signal from a potentiometer.
+
+Tool selection started from the bottom of the stack, namely IO.\  The need was to switch 12 digital outputs for the valves, each about $\qty{2}{\watt}$, and six analog inputs ($\qtyrange[range-units=single,range-phrase=..]{0}{24}{\volt}$) from the position sensors.  It was also desirable for the work to be done quickly to have a demonstration in time for publication.  This was met with EtherCAT IO cards from Beckhoff~GmbH, in large part thanks to their availability within our lab.  They supply digital output cards and analog input cards that mostly met the requirements; the digital outputs needed to be supplemented with flyback diodes due to the inductive load and the analog inputs needed signals stepped down to $\qtyrange[range-units=single,range-phrase=..]{0}{10}{\volt}$ with resistors~\cite{BeckhoffEL2042,BeckhoffEL3062}.  This meant routing signal cables from the sensors and transducers to terminal blocks, placing the diodes and resistors in the terminals, and from there on to the Beckhoff terminals.  There then is an EtherCAT connection from the block of Beckhoff terminals to the computer's Ethernet port~\cite{BeckhoffEK1100}.
 
 In selecting the computer, it needed to communicate with the IO over EtherCAT and be cheap and easy to develop for.  The Raspberry Pi supports EtherCAT, was only 54€ ($\approx$¥9000), and for us working on the project, the Linux-based systems are familiar and easy to use.
 
-The principle middleware requirement was an EtherCAT master, which itself depends on system-level networking, that then may have its own dependencies.  By using Linux, all of those requirements except for the EtherCAT master are met.  Conventionally, PLC-based systems, like those from Beckhoff, are used for EtherCAT masters~\cite{BeckhoffTwinCAT}.  However, those generally do not run on Linux.  However, part of the point of this project was to try new things.  So, Ethercrab, which is a master written in the Rust programming language, was used~\cite{Ethercrab}.  Ethercrab benefits from being open source, so motivated users can troubleshoot more easily.  It also has thorough documentation with lots of examples (see e.g.\ \verb|ethercrab/examples/ek1100.rs|).  It is also a Rust library and Rust is an increasingly popular programming language on account of it's ease of making changes to code, quality tooling, performance, and memory safety~\cite{RustHomePage}.
+The principle middleware requirement was an EtherCAT master, which itself depends on system-level networking, that then may have its own dependencies.  By using Linux, all of those requirements except for the EtherCAT master are met.  Conventionally, PLC-based systems, like those from Beckhoff, are used for EtherCAT masters~\cite{BeckhoffTwinCAT}.  However, those generally do not run on Linux.  However, part of the point of this project was to try new things.  So, Ethercrab, which is a master written in the Rust programming language, was used~\cite{Ethercrab}.  Ethercrab benefits from being open source, so motivated users can troubleshoot more easily.  It also has thorough documentation with lots of examples (e.g.\ \verb|ethercrab/examples/ek1100.rs| was the basis of the control-layer application).  It is also a Rust library and Rust is an increasingly popular programming language on account of it's ease of making changes to code, quality tooling, performance, and memory safety~\cite{RustHomePage}.
 
-CONTROL LAYER
+Finally, the control layer had to use the API of the middleware layer to implement the business logic.  One case of that logic was to have a P controller to regulate the position of each cylinder.  It had to be implemented in Rust to interface with the Ethercrab library.  It also required some boilerplate code to initialize the EtherCAT communication and to configure the Beckhoff terminals.  There's also a terminal-based user interface to interactively set the cylinder position.  An interesting issue came up where the position sensor signal, mapping the  $\qtyrange[range-units=single,range-phrase=..]{0}{10}{\volt}$ IO to the range 0..1~\verb|float|, but only reached the range 0..0.5~\verb|float|.  This was because the step-down resistor was larger than designed due to unavailability of the right size, so the maximum sensor reading was smaller than $\qty{10}{\volt}$.  This sort of an unhandled gain is an undesired interface between the Control and IO layers since it demands the controller be written with knowledge of the minutia of how the IO was implemented.  Further research will go toward how to prevent this.
 
-\subsection{A Recorder-Playing Robot}
+The stack used for this pneumatic Stewart platform was Beckhoff EtherCAT Terminals with supplemental circuits for IO, a Raspberry Pi computer, Linux/Ethercrab middleware, and the control layer was built with Rust.
 
-Gonna cite Masuda-san~\cite{Masuda2012}
+% \subsection{Dolores, a Full-Scale Mining-Loader Steering Linkage}
 
-\lipsum[1-3]
+% Talking about Dolores, seen in figure~\ref{fig:dolores}, gotta cite Ville~\cite{Naervaenen2022}, Hermansson~\cite{Hermansson2021}, and Pyne~\cite{Pyne2020}.
 
-\clearpage
+% Dolores is an articulated steering linkage test, see Dudziński~\cite{Dudzinski1989} for background on articulated steering.  It's meant to be like a linkage from a mining vehicle.
 
+% \begin{figure}[h]
+% 	\centering
+% 	\includegraphics[width=0.4\textwidth]{assets/dolores}
+% 	\caption{Dolores rotates the top platform about a pivot by actuating a pair of hydraulic cylinders.  A pair of additional cylinders in parallel can resist the motion providing loads useful for testing}\label{fig:dolores}
+% \end{figure}
 
-\section{Results and Discussion}
+% The hydraulics are implemented as a DDH a.k.a. EHA system.  That kind of system was described by Zhang et al in~\cite{Zhang2017}.  The particular circuit is similar to that by Chiang in~\cite{Chiang2011}.
 
-\lipsum[1-3]
+% EHA/DDH was first noted in by~\cite{Helduser1995} in German, and he also did the first English-language publication in~\cite{Helduser1999}.
 
-\subsection{Future Work}
+% \subsubsection{Old System}
 
-\lipsum[8-9]
+% Prior to the work for this thesis, Dolores was controlled by Matlab and Simulink code wherein sensor readings were taken over a CAN bus through a USB-CAN dongle to the Simulink Vector CAN interface [cite].  The devices on the CAN bus were initialized using the Vector CANalyzer program.  The control program sent motor commands to a Parker ECU, seen in figure~\ref{fig:dolores_old_system}, over CANopen, which itself would send commands to the ABB inverter that drove the motor.  It also sent signals to a shuttle valve through a National Instruments DAQ, which was stepped up in power with a relay and a bench-top power supply.
+
+% \begin{figure}[h]
+% 	\centering
+% 	\includegraphics[width=0.4\textwidth]{assets/old_dolores_controls}
+% 	\caption{The previous control system had an ECU (center), power supplies for valves (bottom), readouts for flows in the hydraulic circuit (top), and a cabinet containing the inverter for the electric motor (left).  Not depicted is the National Instruments DAQ and the CAN-USB dongle.}\label{fig:dolores_old_system}
+% \end{figure}
+
+% Pros:
+% \begin{enumerate}
+% 	\item can be programmed with Matlab/Simulink (\textbf{FLEXIBLE})
+% 	\item it worked
+% \end{enumerate}
+
+% Cons:
+% \begin{enumerate}
+% 	\item components provided by 6 vendors (\textbf{SLOW})
+% 	\item two components only for motor control (inverter, ECU), two components for IO (DAQ, CAN dongle) (\textbf{SLOW}, \textbf{GOOD})
+% 	\item multiple programs running for initialization (\textbf{BAD}, \textbf{SLOW})
+% 	\item every part of the system is opaque (\textbf{BAD})
+% 	\item supporting new interfaces requires adding more components and thus complexity (\textbf{RIGID})
+% \end{enumerate}
+
+% \subsubsection{New System}
+
+% An industry collaborator on the GOOD project required that we use EtherCAT~\cite{Andreeva2023} to communicate with some inverters they were providing for the project.  This meant that the extant control hardware needed to be replaced with something that supports EtherCAT.
+
+% Additionally, a different industry partner suggested driving our hardware to run in tandem with software simulations, principally with the Mevea physics system~\cite{MeveaSoftware}.  Because of this, it was a priority to design the control systems that could integrate with external applications.  However, to date there haven't been any experiments that have called for this.  So while it was an important factor in the initial selection, external integrations haven't been thoroughly exercised.
+
+% It was also understood that the already-installed CAN-based sensors would remain in place, so CAN support was a requirement for the system.  With the benefit of hindsight, if this requirement were not there, commissioning these control systems would have been faster, but there was not the institutional knowledge in Aalto's Fluid Power Lab to anticipate this.
+
+% I considered two option in how to change the system.  One was to use a Speedgoat Realtime system and the other to use a PLC from Beckhoff Automation.  After studying both options, I implemented the control system with the Beckhoff PLC.  The reasoning for why follows.
+
+% The Speedgoat system was the first system I considered.  Behind the branding, these were regular computers which ran QNX, a UNIX-like, real-time operating system~\cite{SpeedgoatMachine, QnxSdp}.  It has an interface with Matlab and Simulink, and in fact, these interfaces are the intended principal means of administering these computers.
+
+% The principal benefit of this systems was its deep integration with Matlab and Simulink, which are familiar to the other researchers working on the GOOD project.  It would enable at least some degree of code reuse between simulation and hardware testing, which would speed up iteration time and so allow greater research output.
+
+% With respect to IO, Speedgoat sells expansions for CAN and digital IO like needed for valves.  They were fairly pricey and seemed as though they could not be easily used with non-Speedgoat systems, but they presumably worked in their intended context.  It's also possible for Speedgoat to communicate with 3rd-party IO devices over EtherCAT.  Since EtherCAT terminals from Beckhoff Automation are relatively cheap and staff in our lab had experience with them, we considered them a strong option.
+
+% Integration with external applications is where Speedgoat fell flat.  interfaces with external applications couldn't be used directly in the Simulink models since they run on the Speedgoat system and not the workstation which has the external applications.  The solution to this is to communicate over a local network information about the system state.  Speedgoat is able to use Simulink's network communication blocks to send messages over TCP/IP or UDP~\cite{SimulinkNetworkComms}.  However, I was not able to get reliable communication from reproducing the examples in the documentation.  Better was communication with the Matlab's Instrument Control Toolbox, but that can only (easily) be used to create virtual control panels in Matlab, not more general interfaces~\cite{SimulinkInstrument}.  There was also an option to use an open-source networking library like Zero MQ, but that would have required obtaining a C++ compiler compatible with QNX and then creating the Simulink blocks to access it, which would be difficult and expensive~\cite{ZeroMQ}.
+
+% I considered its strong guarantees of real-time performance, however, I never could find a case where they seemed to matter.  A real-time system is one where the low-level computer systems support running a program with a fixed time step, and often that time step is small and has little error.  Small time steps are nice, but Dolores is massive and has the large time constants associate with that, so very small time steps ($\mathcal{O}(\unit{\micro\second})$) won't provide any control benefit.  As well, I don't know that a time step coming late or early would disrupt control function, so I felt it appropriate to ignore this kind of timing jitter and allow issues related to it to be discovered instead of anticipated.  To date, this has caused no issues.
+
+% While its deep integration with Matlab and Simulink is appealing, the high difficulty in integrating with external tools made it an untenable choice.
+
+% The Beckhoff PLC was better, but not perfect.  Under the hood, they are regular computers that run Windows.  A PLC isn't a special type of computer, it just means that programs are written with computer languages specified by \mbox{IEC 61131-3}~\cite{IEC61131-3}.  For Beckhoff's systems, the development tools for these languages are provided by the TwinCAT IDE~\cite{BeckhoffTwinCAT}.  As mentioned previously, Beckhoff sells hardware for EtherCAT IO, and that includes a CAN master device~\cite{BeckhoffEL6751}.
+
+% It is a drawback that programs can't be written directly in Matlab or Simulink with the PLC hardware.  However, there was already some knowledge of the PLC language Structured Text in the lab and Beckhoff offers some products for interfacing with Matlab~\cite{BeckhoffMatlabInterface}.  So there was a possibility of using more familiar tools, though those interfaces received less support from Beckhoff than the native PLC code.  The PLC language for its part was fine.  It competently afforded moving data in and out of hardware and it had some facilities for abstracting low-level behaviors into higher-level concepts using Function Blocks, which are similar to classes in C++.
+
+% Through some informal experiments, I found the IO hardware and software to be reasonable to work with.  Program variables could be declared as an input or output and then linked with a register on the IO device.  To access these registers, the TwinCAT IDE could scan for all the devices available on the EtherCAT network and create a device tree containing IO registers and configuration data.  However, in time I would discover that doing this uncarefully could break the existing links which would take a long time to recreate.
+
+% \begin{figure}[h]
+% 	\centering
+% 	\includegraphics[width=0.4\textwidth]{assets/new_dolores_controls}
+% 	\caption{foo}\label{fig:dolores_new_system}
+% \end{figure}
+
+% IO over CAN was much more difficult.  While Beckhoff officially supports it, the available documentation is sparse, difficult to find, and doesn't include critical configuration procedures.  The only way to learn these things is to contact support.  This can take a long time, since to the best of my knowledge, Beckhoff has only one support person knowledgeable in the CAN system in Finland.  Even after getting support, major features like initialization were missing and needed to be provided with the Vector CAN tools used in the old system.  From notes in unrelated documentation I could find, it appears that initialization at least is technically implemented, but the means to enable it remain elusive.
+
+% The inverter which was provided, an ABB ACS880, can be commanded with the CiA 402 protocol~\cite{ACS880, CiA402}.  It would appear that TwinCAT has built-in support for this protocol, however it appears that it's locked behind using their motor control products, e.g. EP7211~\cite{EP7211}.  While it would have been desirable to do so, this project was constrained by industry collaborators to communicate with the inverters directly over EtherCAT.  Therefore it was necessary to create a new implementation of this protocol which doesn't demand other hardware.  This wasn't extremely difficult; the protocol just describes a finite state machine to bring the drive into an operational state.  However, without any facilities for error handling, like \verb|try|/\verb|catch| blocks in C++~\cite{CppTryCatch} or \verb|Result|s in Rust~\cite{RustResult}, it was very tricky to implement error handling and I am not confident that the current implementation is completely reliable.  This means that the drive can potentially enter an unsafe fault state which would need to be handled by a human operator hitting an emergency stop switch.
+
+% All these IO cards came with long lead times for orders, sometimes up to months.  Beckhoff claims this is due to supply chain issues stemming from the past years of social and political upheaval around the world.  Regardless, I doubt Speedgoat delivers much faster given they are a much smaller vendor.
+
+% Interfacing with external programs was possible through a built-in network UDP interface~\cite{BeckhoffTcpUdpRealtime}.  It requires configuration and about 150 lines of code to create the server on the PLC side.  Then the external application can communicate with it as though it's like any other UDP server on the internet.  An example I created of how this is implemented can be found online in~\cite{PorterGoodPlc}.  The PLC portion found at the path \verb|/good_system/Dolores/POUs/Server.TcPOU| and the external application at \verb|/plc_client/plc_client.py|.  TwinCAT's UDP API was sufficient to create a simple network interface for the PLC program, however when I tried to create more complex interfaces, it frequently crashed and behind only cryptic, unhelpful error messages, if anything at all.
 
 \clearpage
 
 
 \section{Conclusion}
 
-\lipsum[1-4]
+This paper presented three case studies to demonstrate the utility of the novel theory of a mechatronic tech stack.  These cases were diverse in their applications and methods and by viewing them through the lens of the tech stack, new knowledge of how fluid power systems can be commissioned was gained.  As well, by studying several stacks, we have formed a pool of tools to draw from.  The mechatronic tech stack can be re-rendered to reflect this, as here in figure~\ref{fig:mechatronic_tech_stack_filled}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{assets/mechatronic_tech_stack_filled}
+  \caption{Not only does the mechatronic tech stack present layers of abstraction, it also provides an idea of what tools to choose, similar to figure~\ref{fig:web_stack}}\label{fig:mechatronic_tech_stack_filled}
+\end{figure}
+
+Using this model, practitioners can more easily reason about what different parts of their control systems do and what tools to employ for them.  This mental model enables faster development of systems and redirects thought to what tools would be {\it best\/} instead of merely functional.  All this will allay the difficulty and complexity of developing fluid power systems.
 
 \clearpage
 
