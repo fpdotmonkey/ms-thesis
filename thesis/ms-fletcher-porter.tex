@@ -84,6 +84,10 @@
 \usepackage{subcaption}
 \usepackage{bigfoot} % for \verb in \footnote
 
+
+\newcommand\ie{i.e.\ }
+\newcommand\eg{e.g.}
+
 %% All that is printed on paper starts here
 \begin{document}
 
@@ -278,7 +282,7 @@ Tools in each of these layers are myriad and to highlight that, proceeding in fi
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.7\textwidth]{assets/web_stack}
+  \includegraphics[width=\textwidth]{assets/web_stack}
   \caption{The web stack is like four bins of tools, here illustrated as boxes with the logos of common tools within them.}\label{fig:web_stack}
 \end{figure}
 
@@ -342,7 +346,7 @@ This is enough to propose a mechatronic tech stack. The mechatronic stack as out
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.7\textwidth]{assets/mechatronic_tech_stack}
+  \includegraphics[width=\textwidth]{assets/mechatronic_tech_stack}
   \caption{The mechatronic tech stack places high-level business logic at the top and low-level interfacing at the bottom.}\label{fig:mechatronic_tech_stack}
 \end{figure}
 
@@ -365,7 +369,7 @@ Dolores is a full-scale testbed in Aalto University's Fluid Power Laboratory, se
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.6\textwidth]{assets/dolores}
+  \includegraphics[width=0.8\textwidth]{assets/dolores}
   \caption{Dolores rotates the top platform about a pivot by actuating a pair of hydraulic cylinders.  A pair of additional cylinders in parallel can resist the motion providing loads useful for testing.}\label{fig:dolores0}
 \end{figure}
 
@@ -393,17 +397,17 @@ A research group at Okayama University of Science has, over the past years, deve
 
 \begin{figure}[h]
   \centering
-  \begin{subfigure}[t]{0.31\textwidth}
+  \begin{subfigure}[t]{0.47\textwidth}
     \centering
     \includegraphics[width=\textwidth]{assets/six_legged_robot}
     \caption{Six-legged robot~\cite{Hase2020}}\label{sfig:six_legged_robot}
   \end{subfigure}
-  \begin{subfigure}[t]{0.35\textwidth}
+  \begin{subfigure}[t]{0.51\textwidth}
     \centering
     \includegraphics[width=\textwidth]{assets/pipe_robot}
     \caption{Pipe-traversal robot~\cite{Shinohara2020}}\label{sfig:pipe_robot}
   \end{subfigure}
-  \begin{subfigure}[t]{0.32\textwidth}
+  \begin{subfigure}[t]{0.5\textwidth}
     \centering
     \includegraphics[width=\textwidth]{assets/bending_servo_valve}
     \caption{Bending servo valve~\cite{Kobayashi2020}}\label{sfig:bending_servo_valve}
@@ -457,7 +461,24 @@ This Stewart platform employed a tech stack consisting of Beckhoff EtherCAT term
 
 \subsection{Stress Testing IO Requirements}
 
-The Solid Mechanics Laboratory at Aalto University conducts experiments to identify the properties of engineering materials under load particularly studying phenomena ranging from the micron to the meter scale.  As is typical for laboratories studying solid mechanics, they do this by subjecting test samples to a load schedule using a servo controlled hydraulic cylinder.
+The Solid Mechanics Laboratory at Aalto University conducts experiments to identify the properties of engineering materials under load particularly studying phenomena ranging from the micron to the meter scale.  As is typical for laboratories studying solid mechanics, they do this by subjecting test samples to a load schedule using a servo-controlled hydraulic cylinder.  They have several testbeds, each with an instance of a common control system.  This had been controlled by a workstation-commanded DAQ that communicated with a motor controller and a strain gauge amplifier, but new experiments and the desire for faster, better research cycles called for improvements to the control system.
+
+The requirements that drive the design of this control system are mainly related to timing.  There are three compelling design parameters when it comes to timing.  The first is frequency or PID speed; how often in time do control and measurement samples occur?  According to Nyquist, the higher the frequency, the better the control performance~\cite{Nyquist1928}.  Latency, or how old a measurement sample is when it makes it to the PID loop, measured in samples or PID cycles, is also important to control performance.  Thoen shows that in some cases, a system with low sample frequency but low latency can outperform those with high sample frequency and high latency~\cite{Thoen2021}.  Jitter specifies how accurately the sample frequency is kept.  It doesn't impact control performance much, but for high-frequency systems, jitter can be important for compatibility to ensure synchrounous operation.  Its specification and control is generally the domain of analog circuit specialists instead of mechatronic generalists.
+
+The experiments that they run that are most demanding of the control system are fatigue tests which apply a cyclic loading at some frequency for a long duration.  Typically the frequencies are in the range $\qtyrange[range-units=single,range-phrase=..]{20}{30}{\hertz}$.  This suggested a requirement that the control system's closed-loop response should be flat, \ie near unity, in that range as well as some margin on the high end for potential future experiments that are more demanding.  Additionally, the samples themselves will have natural frequencies in the 1000s~Hz range, higher or lower depending on material and geometric properties of the sample.  There were also requirements for the motor controller related to sample frequency and sensor bandwidth, but these did not end up driving the system design.  The system also needed to handle the latency introduced by the strain gauge amplifier (measured to be $\qty{0.3}{\milli\second}$) and by signal conditioning components ($\approx\qtyrange[range-units=single,range-phrase=..]{0.2}{0.4}{\milli\second}$).
+
+It is easier to design a system if its requirements are stated in terms the design can directly address.  One such is the PID frequency.  According to Thoen, the optimal frequency for control is 50 times the system's bandwidth---the natural frequency for mechanical system~\cite{Thoen2021}.  This was based on practical experiments, but likely was based on the Whittaker-Shannon sampling theorem, which says that a sampled signal can reproduce the source if the sampling rate is twice the bandwidth~\cite{Whittaker1915,Shannon1949}.  Lower frequencies have worse control and higher frequencies waste resources for no gain.  This means for a sample with a natural frequency of $\qty{1000}{\hertz}$, the sampling frequency should be $\qty{50}{\kilo\hertz}$.  However, this is a very high sampling frequency and in reality, the test schedules, with their frequencies in mere 10s of hertz, don't demand the highest possible performance.  Instead the frequency will be driven by latency.
+
+Thoen showed that control performance degrades dramatically with latency~\cite{Thoen2021}.  He suggests that the minimum latency is 1.5 PID cycles (one to do computation, half for the analog/digital converter) and that the flat region of the closed loop response reduces by around half at four PID cycles of latency and by around half again at ten PID cycles.  The latency for the present control system in seconds is given, $\qty{0.3}{\milli\second} + \qtyrange[range-units=single,range-phrase=..]{0.2}{0.4}{\milli\second} = \qtyrange[range-units=single,range-phrase=..]{0.5}{0.7}{\milli\second}$.  Since latency time is given, it's possible to simply assert how many cycles of latency and use these together to compute the PID frequency, $f_{\mathrm{PID}} = n_l/t_l$ where $f_{\mathrm{PID}}$ is the PID frequency, $n_l$ is the latency in PID cycles, and $t_l$ is the latency in seconds.  This implies the frequency will decrease with lower latency in cycles.  The implementors of this control system decided to compromise and get a higher frequency with some latency, namely 4 cycles.  This made for a target frequency of $4 / \qtyrange[range-units=single,range-phrase=..]{0.5}{0.7}{\milli\second} = \qtyrange[range-units=single,range-phrase=..]{5.7}{8}{\kilo\hertz}$.  They then selected a single frequency, slightly outside this range of $\qty{5}{\kilo\hertz}$, making for $\qty{5}{\kilo\hertz} \cdot \qtyrange[range-units=single,range-phrase=..]{0.5}{0.7}{\milli\second} = \numrange[range-units=single,range-phrase=..]{2.5}{3.5}$ cycles of latency.  Under Thoen, this control frequency can support systems with a bandwidth of $\qty{5}{\kilo\hertz} / 50 = \qty{100}{\hertz}$, which while much less than the natural frequency of a sample, is three to five times more than the control frequencies expected in the test schedules.  This means it should have the desired control performance.
+
+The architects of this control system needed to select components that meet these performance requirements.  Broadly, they employed the National Instruments (NI) CompactRIO integrated system~\cite{NICompactRIO}.  The particular choices they made will be analyzed using the mechatronic tech stack theory.
+
+The requirement for the IO system is that it be low latency.  Up to here the IO latency has been presented as given, but in reality the latency and PID
+frequency specifications would be driven by the IO latency.  There are two separate IO systems, one for the strain gauges, which require specialized data acquisition to afford the quality of data needed for solid mechanics experiments.  Each instance of the control system has an HBK QuantumX amplifier, which introduces $\qty{0.3}{\milli\second}$ of latency~\cite{HBKQuantumX}.  For other IO, like signals to and from the servo motor driving the hydraulic pump or monitoring the state of the hydraulic circuit, there needed to be some analog IO ports.  The analog/digital and digital/analog converters contribute notable latency.  For the NI C-Series IO modules that were selected, analog output contributed $\approx\qty{6}{\micro\second}$ of latency per output channel and analog input added $\approx\qty{58}{\micro\second}$ of latency per two channels~\cite{NI-9218,NI-9266}.  This combined in some multiples and the IO, with conditioning, was measured to have the previously stated $ \qtyrange[range-units=single,range-phrase=..]{200}{400}{\micro\second}$ of latency.
+
+The computer system Is interesting to discuss on account of the relatively high PID frequency requirement.  A frequency of $\qty{5}{\kilo\hertz}$ means that all computations for a loop must fit within $\qty{.2}{\milli\second}$.  Each CPU instruction for Intel microarchitectures usually takes ones or tens of clock cycles to execute, or even hundreds for heavy insructions~\cite{Abel19a}.  This means that on a computer with a $\qty{1.3}{\giga\hertz}$ clock like that which this thesis is being written with there can only be some thousands of instructions run per PID cycle.  This will include very fast arithmetic instructions like the additions or multiplications needed for the PID computation, but also commands to fetch data from the CPU's IO ports, which tend to be relatively slow since the signals need to be read and moved into a CPU register or memory location which have their own latency separate from the instruction latency.  On an embedded Linux or Windows system, all this would have to occur while sharing CPU time with other processes.  This isn't to say it's not possible to execute this with embedded Linux or Windows---Beckhoff and NI both provide off-the-shelf solutions for this---but performance issues can often distract from implementing business logic.  This can be mitigated with a bare metal system like was used for the above soft robots, but there are much greater gains to be made with Field-Programmable Gate Array (FPGA) systems.
+
+An FPGA, like a CPU, is a programmable chip that performs computations.  However, they differ in when the program is read.  In a CPU, a program is read and executed as the program runs.  A CPU reads an instruction from an address in memory specified by an instruction counter internal to the CPU.  That instruction will be loaded into the CPU and in executing it, the CPU will change its state, perhaps by loading a value from memory into a CPU register, executing an arithmetic or logic instruction, interfacing with IO, or quite often incrementing the instruction counter.  An FPGA, on the other hand, reads and loads the entire program before execution begins.  It does this by mutating its internal circuits to implement the program.  With a lower-level program implementation, \ie a hardware implementation rather than software, an FPGA is able to see higher performance for similar programs.  Instead of indirection through memory lookups, instruction counters, bus loads, and registers, an FPGA can pipeline all necessary instructions in a row.  A PI controller can be implemented as a subtraction circuit, followed by two gains and an accumuluator circuit, followed by an addition circuit.  The circuit would be essentially passive in this case, though there can be memory for more complex logic like would be needed for PD controllers.
 
 \clearpage
 
@@ -470,7 +491,7 @@ It also tested this theory against several case studies.  In one case, a hydraul
 
 Although useful, the theory presented is not yet mature.  The principal issue is that the definitions of the abstraction layers and the boundaries between them lack specificity.  For instance, I state that the computer layer is the hardware that performs computation and that the interface it provides is its architecture.  What constitutes such computational hardware, and what exactly is a computer architecture?  And what is a practitioner meant to do with this information?  Stating that a computer uses a SuperH or x86 architecture doesn't immediately suggest which is better for the application, and likewise for a ATmega328P or ATmega32u4 computer chip.  Providing specific definitions for the layers and their boundaries would be useful.
 
-To increase the specificity of the definition of they theory, motivating its definition with more background theory could be appealing.  Presently, it's motivated by an analogy to the web stack and by a test defined in the OSI model.  If even more theories were employed to discern the structure of the stack and they pointed to similar results, that would substantially strengthen the argument for this theory.  A concrete step towards a specific definition for the tech stack theory would be to emulate the layer definitions provided in the OSI model, which enumerate the purpose, provided services, and function of each abstraction layer~\cite[§7]{ISO7498-1}.  However, it would be better to draw from more sources than this one standard for how to structure the definitions in this theory.  Further benefit could be found by studying and creating more case studies to challenge the structure of the theory and to test its utility.
+To increase the specificity of the definition of the theory, motivating its definition with more background theory could be appealing.  Presently, it's motivated by an analogy to the web stack and by a test defined in the OSI model.  If even more theories were employed to discern the structure of the stack and they pointed to similar results, that would substantially strengthen the argument for this theory.  A concrete step towards a specific definition for the tech stack theory would be to emulate the layer definitions provided in the OSI model, which enumerate the purpose, provided services, and function of each abstraction layer~\cite[§7]{ISO7498-1}.  However, it would be better to draw from more sources than this one standard for how to structure the definitions in this theory.  Further benefit could be found by studying and creating more case studies to challenge the structure of the theory and to test its utility.
 
 This theory can also be extended.  Throughout this work, it has been called a \textit{mechatronic} tech stack, but truly it's a control system tech stack.  To make it a true mechatronic tech stack, it should include tooling for mechanical and electronic systems.  A mechanical section of the stack would likely grow from the bottom of the stack shown in figure~\ref{fig:mechatronic_tech_stack}, not colliding with the current stack, but an electrical component would likely be more complicated, since it is needed by both the mechanical stack for transducers and sensors, and by the control stack since the computer \textit{is} an electrical component, and the IO layer often needs some elecrical finesse, as noted in §\ref{sec:stewart_platform}.  It could also be extended in the software realm; the production of graphical monitoring systems and tele-operation programs generally require substantial non-control software which could be described by different layers, perhaps replacing the control layer in the present stack.
 

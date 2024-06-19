@@ -1,3 +1,10 @@
+# thesis/bib/ holds all the papers, websites, etc that I reference, but
+# I don't have the right to redistributed those, so they shouldn't be in
+# version control
+thesis/bib/*
+!thesis/bib/good-masters.bib
+
+# TeX
 *.toc
 *.lof
 *.log

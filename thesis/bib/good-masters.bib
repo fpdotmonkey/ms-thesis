@@ -1227,4 +1227,107 @@ Prior to detection and containment of the incident, the attacker exfiltrated app
   year         = {2020},
 }
 
+@Article{Whittaker1915,
+  author    = {Whittaker, E. T.},
+  journal   = {Proceedings of the Royal Society of Edinburgh},
+  title     = {XVIII.—On the Functions which are represented by the Expansions of the Interpolation-Theory},
+  year      = {1915},
+  issn      = {0370-1646},
+  pages     = {181--194},
+  volume    = {35},
+  doi       = {10.1017/s0370164600017806},
+  file      = {:Whittaker1915 - XVIII.—On the Functions Which Are Represented by the Expansions of the Interpolation Theory.pdf:PDF:https\://zenodo.org/record/1428702/files/article.pdf},
+  publisher = {Cambridge University Press (CUP)},
+}
+
+@Article{Shannon1949,
+  author    = {Shannon, C. E.},
+  journal   = {Proceedings of the IRE},
+  title     = {Communication in the Presence of Noise},
+  year      = {1949},
+  issn      = {0096-8390},
+  month     = jan,
+  number    = {1},
+  pages     = {10--21},
+  volume    = {37},
+  abstract  = {A method is developed for representing any communication system geometrically. Messages and the corresponding signals are points in two "function spaces," and the modulation process is a mapping of one space into the other. Using this representation, a number of results in communication theory are deduced concerning expansion and compression of bandwidth and the threshold effect. Formulas are found for the maxmum rate of transmission of binary digits over a system when the signal is perturbed by various types of noise. Some of the properties of "ideal" systems which transmit at this maxmum rate are discussed. The equivalent number of binary digits per second for certain information sources is calculated.},
+  doi       = {10.1109/jrproc.1949.232969},
+  file      = {:Shannon1949 - Communication in the Presence of Noise.pdf:PDF},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+}
+
+@Article{Nyquist1928,
+  author    = {Nyquist, H.},
+  journal   = {Transactions of the American Institute of Electrical Engineers},
+  title     = {Certain Topics in Telegraph Transmission Theory},
+  year      = {1928},
+  issn      = {0096-3860},
+  month     = apr,
+  number    = {2},
+  pages     = {617--644},
+  volume    = {47},
+  abstract  = {The most obvious method for determining the distortion of telegraph signals is to calculate the transients of the telegraph system. This method has been treated by various writers, and solutions are available for telegraph lines with simple terminal conditions. It is well known that the extension of the same methods to more complicated terminal conditions, which represent the usual terminal apparatus, leads to great difficulties. The present paper attacks the same problem from the alternative standpoint of the steady-state characteristics of the system. This method has the advantage over the method of transients that the complication of the circuit which results from the use of terminal apparatus does not complicate the calculations materially. This method of treatment necessitates expressing the criteria of distortionless transmission in terms of the steady-state characteristics. Accordingly, a considerable portion of the paper describes and illustrates a method for making this translation. A discussion is given of the minimum frequency range required for transmission at a given speed of signaling. In the case of carrier telegraphy, this discussion includes a comparison of single-sideband and double-sideband transmission. A number of incidental topics is also discussed.},
+  doi       = {10.1109/t-aiee.1928.5055024},
+  file      = {:Nyquist1928 - Certain Topics in Telegraph Transmission Theory.pdf:PDF},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+}
+
+@TechReport{Thoen2021,
+  author      = {Brad Thoen},
+  institution = {MTS Systems},
+  title       = {White paper: Optimum sample rate for servohydraulic systems},
+  year        = {2021},
+  file        = {:Thoen2021 - Optimum Sample Rate for Servohydraulic Systems.html:URL:https\://www.mts.com/en/articles/automotive/optimum-sample-rate},
+  url         = {https://www.mts.com/en/articles/automotive/optimum-sample-rate},
+}
+
+@Misc{NI-9218,
+  author       = {{{National Instruments Corp}}},
+  howpublished = {\url{https://www.ni.com/docs/en-US/bundle/ni-9218-specs/page/specs.html}},
+  note         = {Accessed: 2024-06-19},
+  title        = {{NI-9218} Specifications},
+}
+
+@Misc{NI-9266,
+  author       = {{{National Instruments Corp}}},
+  howpublished = {\url{https://www.ni.com/docs/en-US/bundle/ni-9266-specs/page/specs.html}},
+  note         = {Accessed: 2024-06-19},
+  title        = {{NI-9266} Specifications},
+}
+
+@Misc{NICompactRIO,
+  author       = {{{National Instruments Corp}}},
+  howpublished = {\url{https://www.ni.com/en/shop/compactrio.html}},
+  note         = {Accessed: 2024-06-19},
+  title        = {{CompactRIO} Systems},
+}
+
+@Misc{HBKQuantumX,
+  author       = {{{Hottinger Brüel {\&} Kjaer GmbH}}},
+  howpublished = {\url{https://www.hbm.com/en/2128/quantumx-compact-universal-data-acquisition-system}},
+  note         = {Accessed: 2024-06-19},
+  title        = {{QuantumX}: The Universal and Distributable Data Acquisition System},
+}
+
+@InProceedings{Abel19a,
+  author    = {Abel, Andreas and Reineke, Jan},
+  booktitle = {ASPLOS},
+  title     = {uops.info: Characterizing Latency, Throughput, and Port Usage of Instructions on Intel Microarchitectures},
+  year      = {2019},
+  address   = {New York, NY, USA},
+  pages     = {673--686},
+  publisher = {ACM},
+  series    = {ASPLOS '19},
+  abstract  = {Modern microarchitectures are some of the world’s most complex man-made systems. As a consequence, it is increasingly difficult to predict, explain, let alone optimize the performance of software running on such microarchitectures.
+As a basis for performance predictions and optimizations, we would need faithful models of their behavior, which are, unfortunately, seldom available.
+ In this paper, we present the design and implementation of a tool to construct faithful models of the latency, throughput, and port usage of x86 instructions. To this end, we first discuss common notions of instruction throughput and port usage, and introduce a more precise definition of latency that, in contrast to previous definitions, considers dependencies between different pairs of input and output operands. We then develop novel algorithms to infer the latency, throughput, and port usage based on automatically-generated microbenchmarks that are more accurate and precise than existing work.
+ To facilitate the rapid construction of optimizing compilers and tools for performance prediction, the output of our tool is provided in a machine-readable format. We provide experimental results for processors of all generations of Intel’s Core architecture, i.e., from Nehalem to Coffee Lake, and discuss various cases where the output of our tool differs considerably from prior work.},
+  acmid     = {3304062},
+  doi       = {10.1145/3297858.3304062},
+  isbn      = {978-1-4503-6240-5},
+  location  = {Providence, RI, USA},
+  numpages  = {14},
+  url       = {http://doi.acm.org/10.1145/3297858.3304062},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
