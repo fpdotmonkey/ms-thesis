@@ -3,6 +3,7 @@
 # version control
 thesis/bib/*
 !thesis/bib/good-masters.bib
+thesis/ms-fletcher-porter.pdf
 
 # TeX
 *.toc
@@ -10,7 +11,6 @@ thesis/bib/*
 *.log
 *.lot
 *.fls
-*.pdf
 *.out
 *.aux
 *.toc
