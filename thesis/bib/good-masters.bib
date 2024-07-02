@@ -1157,7 +1157,7 @@ Prior to detection and containment of the incident, the attacker exfiltrated app
 
 @InProceedings{Porter2024,
   author    = {Fletcher Porter and Jari Vepsäläinen},
-  booktitle = {The 12th JFPS Internation Symposium on Fluid Power},
+  booktitle = {The 12th JFPS International Symposium on Fluid Power},
   title     = {A Model for Selecting Software Tools for Fluid Power Systems (In Review)},
   year      = {2024},
   abstract  = {Fluid power systems can be enormously complex. The chiefest complexity is in their control components due to the deep knowledge required for effective development, the need to interface with myriad heterogeneous components, and the opacity of its operation. In the IT sector, a tech stack is a known discretization of function within a system, typically used to categorize what software tools do. This enables disparate parts of a system to be developed separately. Inspired by IT tech stacks, this paper presents a model, the mechatronic tech stack, to mitigate this complexity by siloing control system behavior into discrete functions and classifying what tools can be used to meet them. The model is demonstrated on three case studies of diverse application. The theory is promising, but there are challenges in defining the most useful abstractions and interfaces.},
@@ -1378,6 +1378,133 @@ As a basis for performance predictions and optimizations, we would need faithful
   author       = {{{Hottinger Brüel {\&} Kjaer GmbH}}},
   howpublished = {\url{https://www.hbm.com/en/2290/catman-data-acquisition-software}},
   title        = {{DAQ} Software | Data Acquisition Software | {catman}},
+}
+
+@Misc{NIFPGAModule,
+  author       = {{{National Instruments Corp}}},
+  howpublished = {\url{https://www.ni.com/fi-fi/shop/product/labview-fpga-module.html}},
+  note         = {Accessed: 2024-06-28},
+  title        = {{LabVIEW} {FPGA} Module},
+}
+
+@Misc{NIRealTimeModule,
+  author       = {{{National Instruments Corp}}},
+  howpublished = {\url{https://www.ni.com/fi-fi/shop/product/labview-real-time-module.html}},
+  note         = {Accessed: 2024-06-28},
+  title        = {{LabVIEW} Real-Time Module},
+}
+
+@MastersThesis{Kaur2009,
+  author   = {Navneet Kaur},
+  school   = {Thapar University},
+  title    = {Development of {CompactRIO} based {PID} Temperature Controller},
+  year     = {2009},
+  month    = jun,
+  type     = {mathesis},
+  abstract = {During the last 10 years, most of the technological advancements have occurred in the field of high volume products like mobile phones, DVD players, microwave ovens etc. New York Times stated that "On average an American comes in contact with sixty microprocessors in a day". All this is possible because of the progress made in the field of embedded systems.
+Field Programmable Gate Array (FPGA), being the latest venture in the field of embedded electronics and the most successful configuration for embedded systems, is in great demand these days. CompactRIO, a powerful control and acquisition system introduced by National Instruments, is based upon reconfigurable FPGA technology. Apart from FPGA, it also incorporates a real-time processor for reliable stand alone applications. Now instrumentation engineers can also benefit from the FPGA technology without any knowledge of hardware description languages, because the CompactRIO systems can be developed using LabVIEW development platform.
+In this work, we have developed a temperature controlled chamber using the NI CompactRIO. The chamber has been fabricated using the acrylic sheets. Two 200W bulbs have been used for heating purpose and a thermocouple for temperature sensing. A small CPU fan has been used for cooling and only comes into action during emergency situation. A thermocouple input module (NI 9211) has been used to acquire data from thermocouple and a digital output module (NI 9474) has been used to drive the bulbs (via a relay card) and the fan. PID control algorithm has been used for our application and is implemented in LabVIEW.},
+  file     = {:Kaur2009 - Development of CompactRIO based PID.pdf:PDF},
+}
+
+@Misc{Schad2011,
+  author       = {Paul E. Schad and David T. Carney},
+  howpublished = {\url{https://www.embedded.com/case-study-of-pid-control-in-an-fpga/}},
+  month        = jan,
+  note         = {Accessed: 2021-05-21},
+  title        = {Case study of {PID} control in an {FPGA}},
+  year         = {2011},
+  file         = {:Schad2011 - Case study of PID control in an FPGA.pdf:PDF},
+  url          = {https://www.embedded.com/case-study-of-pid-control-in-an-fpga/},
+}
+
+@InProceedings{Ali2010,
+  author    = {Ali, Fakhrulddin H. and Hussein, Mohammed Mahmood and Ismael, Sinan M.B.},
+  booktitle = {1st International Conference on Energy, Power and Control (EPC-IQ)},
+  title     = {{LabVIEW} {FPGA} implementation of a {PID} controller for {D.C.} motor speed control},
+  year      = {2010},
+  pages     = {139-144},
+  abstract  = {This paper presents a novel hardware design methodology of digital control systems. For this, instead of synthesizing the control system using Very high speed integration circuit Hardware Description Language (VHDL), LabVIEW FPGA module from National Instrument (NI) is used to design the whole system that include analog capture circuit to take out the analog signals (set point and process variable) from the real world, PID controller module, and PWM signal generator module to drive the motor. The physical implementation of the digital system is based on Spartan-3E FPGA from Xilinx. Simulation studies of speed control of a D.C. motor are conducted and the effect of a sudden change in reference speed and load are also included.},
+  file      = {:Ali2010 - LabVIEW FPGA Implementation Of a PID Controller.pdf:PDF},
+  keywords  = {Field programmable gate arrays;Pulse width modulation;Hardware;Integrated circuit modeling;Mathematical model;Process control;Control systems;PID Controller;LabVIEW FPGA;Speed Control;Spartan-3E;PWM},
+}
+
+@Book{MeyerBaese2014,
+  author    = {Meyer-Baese, Uwe},
+  publisher = {Springer Berlin Heidelberg},
+  title     = {Digital Signal Processing with Field Programmable Gate Arrays},
+  year      = {2014},
+  isbn      = {9783642453090},
+  doi       = {10.1007/978-3-642-45309-0},
+  file      = {:MeyerBaese2014 - Digital Signal Processing with Field Programmable Gate Arrays.pdf:PDF},
+  issn      = {1860-4870},
+  journal   = {Signals and Communication Technology},
+}
+
+@InBook{MeyerBaese2014a,
+  author    = {Meyer-Baese, Uwe},
+  chapter   = {Introduction},
+  pages     = {1--56},
+  publisher = {Springer Berlin Heidelberg},
+  title     = {Digital Signal Processing with Field Programmable Gate Arrays},
+  year      = {2014},
+  isbn      = {9783642453090},
+  booktitle = {Signals and Communication Technology},
+  doi       = {10.1007/978-3-642-45309-0_1},
+  issn      = {1860-4870},
+}
+
+@Book{Malvino1999,
+  author    = {Albert Paul Malvino and Jerald A. Brown},
+  publisher = {Glencoe/McGraw Hill},
+  title     = {Digital Computer Electronics},
+  year      = {1999},
+  edition   = {third},
+  isbn      = {0-02-800594-5},
+  comment   = {Book which Ben Eater based his breadboard computer on},
+  file      = {:Malvino1999 - Digital Computer Electronics.pdf:PDF},
+}
+
+@Misc{RustHDL,
+  author       = {{{Rust HDL contributors}}},
+  howpublished = {\url{https://rust-hdl.org/}},
+  note         = {Accessed: 2024-06-28},
+  title        = {{RustHDL}},
+  file         = {:RustHDL - RustHDL.html:URL:https\://rust-hdl.org/},
+  url          = {https://rust-hdl.org/},
+}
+
+@Misc{VivadoHLS,
+  author       = {{{Advanced Micro Devices, Inc}}},
+  howpublished = {\url{https://www.xilinx.com/products/design-tools/vivado/high-level-design.html}},
+  note         = {Accessed: 2024-06-28},
+  title        = {Vivado High Level Design Features},
+  file         = {:VivadoHLS - Vivado High Level Design Features.html:URL:https\://www.xilinx.com/products/design-tools/vivado/high-level-design.html},
+  url          = {https://www.xilinx.com/products/design-tools/vivado/high-level-design.html},
+}
+
+@TechReport{IEEE1800-2023,
+  author      = {{{Design Automation Standards Committee}}},
+  institution = {IEEE Computer Society},
+  title       = {{IEEE} Standard for {SystemVerilog}--Unified Hardware Design, Specification, and Verification Language},
+  year        = {2024},
+  number      = {IEEE 1800-2023},
+  type        = {standard},
+  abstract    = {The definition of the language syntax and semantics for SystemVerilog, which is a unified hardware design, specification, and verification language, is provided. This standard includes support for modeling hardware at the behavioral, register transfer level (RTL), and gate-level abstraction levels, and for writing test benches using coverage, assertions, object-oriented programming, and constrained random verification. The standard also provides application programming interfaces (APIs) to foreign programming languages. (The PDF of this standard is available at no cost at https://ieeexplore.ieee.org/browse/standards/get-program/page compliments of Accellera Systems Initiative)},
+  doi         = {10.1109/IEEESTD.2024.10458102},
+  file        = {:IEEE1800-2023 - IEEE Standard for SystemVerilog--Unified Hardware Design, Specification, and Verification Language.pdf:PDF},
+  keywords    = {IEEE Standards;Design automation;Hardware design languages;Formal verification;Computer languages;System analysis and design;assertions;design automation;design verification;hardware description language;HDL;HDVL;IEEE Std 1800™;PLI;programming language interface;SystemVerilog;Verilog®;VPI},
+}
+
+@TechReport{IEEE1070-2000,
+  author      = {{{Design Automation Standards Committee}}},
+  institution = {IEEE Computer Society},
+  title       = {{VHDL} Language Reference Manual},
+  year        = {2000},
+  number      = {IEEE 1070-2000},
+  type        = {standard},
+  abstract    = {VHSIC Hardware Description Language (VHDL) is defined. VHDL is a formal notation intended for use in all phases of the creation of electronic systems. Because it is both machine readable and human readable, it supports the development, verification, synthesis, and testing of hardware designs; the communication of hardware design data; and the maintenance, modification, and procurement of hardware. Its primary audiences are the implementors of tools supporting the language and the advanced users of the language.},
+  file        = {:IEEE1070-2000 - VHDL Language Reference Manual.pdf:PDF:https\://edg.uchicago.edu/~tang/VHDLref.pdf},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
