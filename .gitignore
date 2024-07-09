@@ -5,6 +5,9 @@ thesis/bib/*
 !thesis/bib/good-masters.bib
 thesis/ms-fletcher-porter.pdf
 
+# SolidWorks
+~$*.SLD*
+
 # TeX
 *.toc
 *.lof
